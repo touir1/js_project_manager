@@ -4,7 +4,8 @@
   "description": "a project to manage javascript projects",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
   "author": "Mohamed Ali Touir",
   "license": "MIT",
@@ -15,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/touir1/js_project_manager/issues"
   },
-  "homepage": "https://github.com/touir1/js_project_manager#readme"
+  "homepage": "https://github.com/touir1/js_project_manager#readme",
+  "dependencies": {
+    "jquery": "^3.2.1"
+  },
+  "devDependencies": {}
 }
