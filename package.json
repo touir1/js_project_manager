@@ -1,0 +1,11 @@
+{
+  "name": "js_project_manager",
+  "version": "1.0.0",
+  "description": "a project to manage javascript projects",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mohamed Ali Touir",
+  "license": "MIT"
+}
