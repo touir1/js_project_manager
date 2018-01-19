@@ -1,22 +1,37 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>JS Project Manager</title>
-        
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        
-        <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
 
-        <link rel="stylesheet" type="text/css" media="screen" href="./styles/main.css" />
-        
-    </head>
-    <body>
-        
-        <iframe id="loaded-app"></iframe>
+<head>
+    <title>JS Project Manager</title>
 
-        <script src="../node_modules/jquery/dist/jquery.min.js"></script>
-        <script src="./js/main.js"></script>
-    </body>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="../node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="./styles/main.css" />
+
+</head>
+
+<body>
+    <div class="container">
+        <form>
+            <div class="form-group">
+                <fieldset>
+                    <legend>Choisir le projet:</legend>
+                    <label for="project-list">Projet: </label>
+                    <select class="form-control" id="project-list"></select>
+                </fieldset>
+            </div>
+        </form>
+    </div>
+    <iframe id="loaded-app"></iframe>
+
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+
 </html>

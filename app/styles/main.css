@@ -1,0 +1,14 @@
+fieldset{
+	width: 40%;
+    margin: auto;
+    padding: 15px;
+	border-color: rgb(49, 61, 231);
+    background-color: #CCC;
+    
+}
+
+legend{
+	color: rgb(0, 68, 255);
+	font-size: 24px;
+	font-weight: bold;
+}
