@@ -1,9 +1,16 @@
-const http = require('http');
-const fs = require('fs');
-const path = require('path');
-const port = 3000;
 
-const getFilePath = function(requestURL){
+//// declaration of imports ////
+var 
+    http = require('http'),
+    fs = require('fs'),
+    path = require('path');
+
+//// declaration of parameters ////
+var
+    port = 3000;
+
+//// path validator ////
+var getFilePath = function(requestURL){
     var filePath = './app' + requestURL;
     if (filePath == './app/')
         filePath = './app/index.html';
@@ -14,7 +21,8 @@ const getFilePath = function(requestURL){
     return filePath;
 }
 
-const getContentType = function(extname){
+//// function to get the content type ////
+var getContentType = function(extname){
     var extensions = ['.js','.css','.json','.png','.jpg','.ico'];
     var contentTypes = ['text/javascript','text/css','application/json','image/png','image/jpg','image/x-icon'];
     var idx = extensions.indexOf(extname);
@@ -22,7 +30,24 @@ const getContentType = function(extname){
     return ((idx == -1)? 'text/html': contentTypes[idx]);
 }
 
-const requestHandler = (request, response) => {
+//// the request error handler ////
+var errorHandler = function(error, contentType, response){
+    if(error.code == 'ENOENT'){
+        fs.readFile('./app/404.html', function(error, content) {
+            response.writeHead(200, { 'Content-Type': contentType });
+            response.end(content, 'utf-8');
+        });
+    }
+    else {
+        response.writeHead(500);
+        response.end('Sorry, check with the site admin for error: '+error.code+' ..\n');
+        response.end(); 
+    }
+}
+
+
+//// the error handler ////
+var requestHandler = function(request, response) {
 
     console.log('request: '+request.url);
 
@@ -34,17 +59,7 @@ const requestHandler = (request, response) => {
 
     fs.readFile(filePath, function(error, content) {
         if (error) {
-            if(error.code == 'ENOENT'){
-                fs.readFile('./app/404.html', function(error, content) {
-                    response.writeHead(200, { 'Content-Type': contentType });
-                    response.end(content, 'utf-8');
-                });
-            }
-            else {
-                response.writeHead(500);
-                response.end('Sorry, check with the site admin for error: '+error.code+' ..\n');
-                response.end(); 
-            }
+            errorHandler(error, contentType, response);
         }
         else {
             response.writeHead(200, { 'Content-Type': contentType });
@@ -53,13 +68,13 @@ const requestHandler = (request, response) => {
     });
 }
 
-const server = http.createServer(requestHandler);
+var server = http.createServer(requestHandler);
 
-server.listen(port, (err) =>{
+server.listen(port, function(err) {
     if(err){
         return console.log('something bad happened', err);
     }
 
-    console.log(`server is listening on ${port}`);
+    console.log( 'server is listening on '+port);
 });
 
