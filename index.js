@@ -68,8 +68,10 @@ var requestHandler = function(request, response) {
     });
 }
 
+//// server creation ////
 var server = http.createServer(requestHandler);
 
+//// starting server ////
 server.listen(port, function(err) {
     if(err){
         return console.log('something bad happened', err);
