@@ -1,0 +1,12 @@
+[
+    {
+        "path": "./projects/hello",
+        "main": "index.html",
+        "name": "Hello project"
+    },
+    {
+        "path": "./projects/world",
+        "main": "index.html",
+        "name": "World project"
+    }
+]
