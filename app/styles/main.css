@@ -12,3 +12,12 @@ legend{
 	font-size: 24px;
 	font-weight: bold;
 }
+
+#loaded-app {
+	width: 100%;
+	height: calc(100% - 160px);
+	overflow: scroll;
+	margin: 0px;
+	padding: 0px;
+	position: absolute;
+}
