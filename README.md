@@ -15,19 +15,16 @@ to use javascript project manager you need to:
 **- Install npm dependencies**
 ```
 npm install
-
 ```
 **- Configure the server**
 ```
 Under server/config you will find the configuration files:
 
 - projectsEntryPoint.json : the list of projects to handle and their paths
-
 ```
 **- Start the server**
 ```
 npm start
-
 ```
 
 ## Authors ##
@@ -35,6 +32,7 @@ npm start
 * Mohamed Ali Touir
   * Github: [https://github.com/touir1](https://github.com/touir1)
   * Email: [touir.mat@gmail.com](mailto:touir.mat@gmail.com)
+  * LinkedIn: [Mohamed Ali Touir](https://www.linkedin.com/in/mohamed-ali-touir-513235108)
 
 ## License ##
 
