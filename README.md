@@ -1,6 +1,8 @@
 # javascript project manager
 A project to manage javascript projects
 
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square)](https://github.com/touir1/js_project_manager/blob/master/LICENSE)
+
 [website](https://touir1.github.io/js_project_manager/)
 
 Javascript project manager is a nodejs application to display all the web projects in a given list.
